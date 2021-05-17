@@ -1,0 +1,66 @@
+---
+swagger: '2.0'
+info:
+  title: Реферальная система API
+  termsOfService: https://www.google.com/policies/terms/
+  contact:
+  license:
+    name: BSD License
+  version: v1
+host: 127.0.0.1:8000
+schemes:
+- http
+basePath: "/api"
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  Basic:
+    type: basic
+security:
+- Basic: []
+paths:
+  "/otp/":
+    post:
+      operationId: otp_create
+      description: Generation sms-code
+      parameters: []
+      responses:
+        '201':
+          description: ''
+      tags:
+      - otp
+    parameters: []
+  "/profile/":
+    get:
+      operationId: profile_list
+      description: User profile
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - profile
+    put:
+      operationId: profile_update
+      description: User profile
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - profile
+    parameters: []
+  "/token/":
+    post:
+      operationId: token_create
+      description: SMS confirmation and token receipt
+      parameters: []
+      responses:
+        '201':
+          description: ''
+      tags:
+      - token
+    parameters: []
+definitions: {}
